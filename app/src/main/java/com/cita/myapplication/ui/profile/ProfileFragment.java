@@ -42,11 +42,11 @@ public class ProfileFragment extends Fragment {
     private static final String TAG_EMAIL_ADDRESS = "email_address";
     private static final String TAG_PASSWORD = "password";
     private static final String TAG = ProfileFragment.class.getSimpleName();
-    private static final String URL = Server.URL + "user/read_profile.php";
-    private final static String TAG_USER_ID = "user_id";
+    private static final String URL = Server.URL + "admin/read_profile.php";
+    private final static String TAG_ADMIN_ID = "admin_id";
 
 
-    private int userId;
+    private int adminId;
     private TextView tvFullName, tvEmailAddress;
 
     @Override
@@ -57,7 +57,7 @@ public class ProfileFragment extends Fragment {
 
         SharedPreferences sharedPreferences = Objects.requireNonNull(getActivity()).getSharedPreferences(LoginActivity.MY_SHARED_PREFERENCES,
                 Context.MODE_PRIVATE);
-        userId = sharedPreferences.getInt(TAG_USER_ID, 0);
+        adminId = sharedPreferences.getInt(TAG_ADMIN_ID, 0);
 
         MaterialCardView mcvFullName = root.findViewById(R.id.mcv_full_name);
         MaterialCardView mcvEmailAddress = root.findViewById(R.id.mcv_email_address);
@@ -88,7 +88,7 @@ public class ProfileFragment extends Fragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         final String fullName = input.getText().toString();
                         StringRequest stringRequest1 = new StringRequest(Request.Method.POST,
-                                Server.URL + "user/update_profile_full_name.php",
+                                Server.URL + "admin/update_profile_full_name.php",
                                 new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
@@ -115,7 +115,7 @@ public class ProfileFragment extends Fragment {
                             protected Map<String, String> getParams() {
                                 Map<String, String> params = new HashMap<>();
                                 params.put(TAG_FULL_NAME, fullName);
-                                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
+                                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(adminId));
                                 return params;
                             }
                         };
@@ -153,7 +153,7 @@ public class ProfileFragment extends Fragment {
                         final String emailAddress = input.getText().toString();
                         if (isEmailValid(emailAddress)) {
                             StringRequest stringRequest1 = new StringRequest(Request.Method.POST,
-                                    Server.URL + "user/update_profile_email_address.php",
+                                    Server.URL + "admin/update_profile_email_address.php",
                                     new Response.Listener<String>() {
                                         @Override
                                         public void onResponse(String response) {
@@ -180,7 +180,7 @@ public class ProfileFragment extends Fragment {
                                 protected Map<String, String> getParams() {
                                     Map<String, String> params = new HashMap<>();
                                     params.put(TAG_EMAIL_ADDRESS, emailAddress);
-                                    params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
+                                    params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(adminId));
                                     return params;
                                 }
                             };
@@ -220,7 +220,7 @@ public class ProfileFragment extends Fragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         final String password = input.getText().toString();
                         StringRequest stringRequest1 = new StringRequest(Request.Method.POST,
-                                Server.URL + "user/update_profile_password.php",
+                                Server.URL + "admin/update_profile_password.php",
                                 new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
@@ -247,7 +247,7 @@ public class ProfileFragment extends Fragment {
                             protected Map<String, String> getParams() {
                                 Map<String, String> params = new HashMap<>();
                                 params.put(TAG_PASSWORD, password);
-                                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
+                                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(adminId));
                                 return params;
                             }
                         };
@@ -291,7 +291,7 @@ public class ProfileFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
+                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(adminId));
                 return params;
             }
         };
