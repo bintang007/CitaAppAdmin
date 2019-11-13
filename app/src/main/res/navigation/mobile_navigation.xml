@@ -56,43 +56,38 @@
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
 
-    <fragment
-        android:id="@+id/nav_child"
-        android:name="com.cita.myapplication.ui.child.ChildFragment"
-        android:label="@string/menu_child"
-        tools:layout="@layout/fragment_child">
-        <action
-            android:id="@+id/action_nav_child_to_nav_create_child"
-            app:destination="@id/nav_create_child" />
-        <action
-            android:id="@+id/action_nav_child_to_nav_show_child"
-            app:destination="@id/nav_show_child" />
-    </fragment>
 
     <fragment
         android:id="@+id/nav_nutrient"
         android:name="com.cita.myapplication.ui.nutrient.NutrientFragment"
         android:label="@string/menu_nutrient"
-        tools:layout="@layout/fragment_nutrient" />
-
-    <fragment
-        android:id="@+id/nav_create_child"
-        android:name="com.cita.myapplication.ui.child.CreateChildFragment"
-        android:label="@string/menu_create_child"
-        tools:layout="@layout/fragment_create_child">
-        <argument
-            android:name="userId"
-            android:defaultValue="0"
-            app:argType="integer" />
+        tools:layout="@layout/fragment_nutrient">
+        <action
+            android:id="@+id/action_nav_nutrient_to_nav_create_nutrient"
+            app:destination="@id/nav_create_nutrient" />
+        <action
+            android:id="@+id/action_nav_nutrient_to_nav_show_nutrient"
+            app:destination="@id/nav_show_nutrient" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_show_child"
-        android:name="com.cita.myapplication.ui.child.ShowChildFragment"
-        android:label="@string/menu_show_child"
-        tools:layout="@layout/fragment_show_child" >
+        android:id="@+id/nav_create_nutrient"
+        android:name="com.cita.myapplication.ui.nutrient.CreateNutrientFragment"
+        android:label="@string/menu_create_nutrient"
+        tools:layout="@layout/fragment_create_nutrient">
+
         <argument
-            android:name="childId"
+            android:name="adminId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_show_nutrient"
+        android:name="com.cita.myapplication.ui.nutrient.ShowNutrientFragment"
+        android:label="@string/menu_show_nutrient"
+        tools:layout="@layout/fragment_show_nutrient" >
+        <argument
+            android:name="nutrientId"
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>

@@ -271,6 +271,7 @@ public class ProfileFragment extends Fragment {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        Log.e(TAG, "Read response: "+response);
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             tvFullName.setText(jsonObject.getString(TAG_FULL_NAME));
