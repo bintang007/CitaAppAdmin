@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void logout() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(LoginActivity.SESSION_STATUS, false);
-        editor.putInt(LoginActivity.TAG_USER_ID, 0);
+        editor.putInt(LoginActivity.TAG_ADMIN_ID, 0);
         editor.apply();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         finish();

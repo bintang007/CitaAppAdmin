@@ -128,7 +128,7 @@ public class ChildFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put(LoginActivity.TAG_USER_ID, String.valueOf(userId));
+                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
                 return params;
             }
         };

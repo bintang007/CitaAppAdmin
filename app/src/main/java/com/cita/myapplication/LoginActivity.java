@@ -44,12 +44,12 @@ public class LoginActivity extends AppCompatActivity {
     private CheckBox cbRememberMe;
     private int success;
 
-    private static final String URL = Server.URL + "user/login.php",
+    private static final String URL = Server.URL + "admin/login.php",
             TAG = LoginActivity.class.getSimpleName(),
             TAG_SUCCESS = "success",
             TAG_JSON_OBJ = "json_obj_req";
 
-    public static final String TAG_USER_ID = "user_id",
+    public static final String TAG_ADMIN_ID = "admin_id",
             TAG_EMAIL_ADDRESS = "email_address", TAG_PASSWORD = "password", TAG_MESSAGE = "message";
 
     private SharedPreferences sharedPreferences;
@@ -66,14 +66,12 @@ public class LoginActivity extends AppCompatActivity {
 
         cbRememberMe = findViewById(R.id.cb_remember_me);
         MaterialButton btnNext = findViewById(R.id.btn_next);
-        TextView tvRegister = findViewById(R.id.tv_register);
         TextView tvForgotPassword = findViewById(R.id.tv_reset_password);
         tietEmailAddress = findViewById(R.id.tiet_email_address);
         tietPassword = findViewById(R.id.tiet_password);
         tilEmailAddress = findViewById(R.id.til_email_address);
         tilPassword = findViewById(R.id.til_password);
 
-        tvRegister.setPaintFlags(tvRegister.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tvForgotPassword.setPaintFlags(tvForgotPassword.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         //Cek session login jika bernilai true maka lanjut ke UserMainActivity
@@ -115,13 +113,6 @@ public class LoginActivity extends AppCompatActivity {
                         checkLogin(emailAddress, password);
                     }
                 }
-            }
-        });
-        tvRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -188,14 +179,14 @@ public class LoginActivity extends AppCompatActivity {
 
                             // Check untuk error node di JSON
                             if (success == 1) {
-                                int userId = jsonObject.getInt(TAG_USER_ID);
+                                int adminId = jsonObject.getInt(TAG_ADMIN_ID);
 
                                 Toast.makeText(getApplicationContext(), jsonObject.getString(TAG_MESSAGE),
                                         Toast.LENGTH_LONG).show();
 
                                 // Menyimpan login ke session
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putInt(TAG_USER_ID, userId);
+                                editor.putInt(TAG_ADMIN_ID, adminId);
                                 if (cbRememberMe.isChecked()) {
                                     editor.putBoolean(SESSION_STATUS, true);
                                 }

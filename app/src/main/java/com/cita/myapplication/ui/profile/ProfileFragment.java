@@ -115,7 +115,7 @@ public class ProfileFragment extends Fragment {
                             protected Map<String, String> getParams() {
                                 Map<String, String> params = new HashMap<>();
                                 params.put(TAG_FULL_NAME, fullName);
-                                params.put(LoginActivity.TAG_USER_ID, String.valueOf(userId));
+                                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
                                 return params;
                             }
                         };
@@ -180,7 +180,7 @@ public class ProfileFragment extends Fragment {
                                 protected Map<String, String> getParams() {
                                     Map<String, String> params = new HashMap<>();
                                     params.put(TAG_EMAIL_ADDRESS, emailAddress);
-                                    params.put(LoginActivity.TAG_USER_ID, String.valueOf(userId));
+                                    params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
                                     return params;
                                 }
                             };
@@ -247,7 +247,7 @@ public class ProfileFragment extends Fragment {
                             protected Map<String, String> getParams() {
                                 Map<String, String> params = new HashMap<>();
                                 params.put(TAG_PASSWORD, password);
-                                params.put(LoginActivity.TAG_USER_ID, String.valueOf(userId));
+                                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
                                 return params;
                             }
                         };
@@ -291,7 +291,7 @@ public class ProfileFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put(LoginActivity.TAG_USER_ID, String.valueOf(userId));
+                params.put(LoginActivity.TAG_ADMIN_ID, String.valueOf(userId));
                 return params;
             }
         };
