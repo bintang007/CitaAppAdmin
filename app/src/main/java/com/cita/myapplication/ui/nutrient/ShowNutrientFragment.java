@@ -184,11 +184,7 @@ public class ShowNutrientFragment extends Fragment {
                 params.rightMargin = getResources().getDimensionPixelOffset(R.dimen.activity_horizontal_margin);
                 input.setSingleLine();
                 input.setLayoutParams(params);
-                input.requestFocus();
                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                assert imm != null;
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
                 input.setText(tvCarbohydrate.getText().toString());
                 container.addView(input);
                 alert.setTitle("Karbohidrat");
@@ -264,10 +260,7 @@ public class ShowNutrientFragment extends Fragment {
                 params.rightMargin = getResources().getDimensionPixelOffset(R.dimen.activity_horizontal_margin);
                 input.setSingleLine();
                 input.setLayoutParams(params);
-                input.requestFocus();
-                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                assert imm != null;
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 input.setText(tvCalories.getText().toString());
                 container.addView(input);
                 alert.setTitle("Kalori");
@@ -343,10 +336,7 @@ public class ShowNutrientFragment extends Fragment {
                 params.rightMargin = getResources().getDimensionPixelOffset(R.dimen.activity_horizontal_margin);
                 input.setSingleLine();
                 input.setLayoutParams(params);
-                input.requestFocus();
-                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                assert imm != null;
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 input.setText(tvNutrientName.getText().toString());
                 container.addView(input);
                 alert.setTitle("Lemak");
@@ -422,10 +412,7 @@ public class ShowNutrientFragment extends Fragment {
                 params.rightMargin = getResources().getDimensionPixelOffset(R.dimen.activity_horizontal_margin);
                 input.setSingleLine();
                 input.setLayoutParams(params);
-                input.requestFocus();
-                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                assert imm != null;
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 input.setText(tvProtein.getText().toString());
                 container.addView(input);
                 alert.setTitle("Protein");
