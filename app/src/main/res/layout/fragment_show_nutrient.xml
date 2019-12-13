@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    tool:context=".ui.child.ShowChildFragment">
+    tool:context=".ui.nutrient.ShowNutrientFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/mcv_nutrient_name"

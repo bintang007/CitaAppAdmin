@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cita App</string>
+    <string name="app_name">Cita App Admin</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -16,8 +16,10 @@
     <string name="menu_send">Send</string>
     <string name="menu_profile">Profil</string>
     <string name="menu_child">Data Anak</string>
+    <string name="menu_diagnoses">Data Diagnosa Anak</string>
     <string name="menu_show_child">Datail Data Anak</string>
     <string name="menu_show_nutrient">Detail Data Kandungan Gizi</string>
+    <string name="menu_show_diagnoses">Detail Data Diagnosa Anak</string>
     <string name="menu_create_child">Tambah Data Anak</string>
     <string name="menu_nutrient">Data Kandungan Gizi</string>
     <string name="menu_create_nutrient">Tambah Data Kandungan Gizi</string>
@@ -64,4 +66,12 @@
     <string name="txt_nutrient_name">Nama Kandungan Gizi</string>
     <string name="txt_carbohydrate">Karbohidrat</string>
     <string name="txt_calories">Kalori</string>
+    <string name="txt_age">Usia (bulan)</string>
+    <string name="txt_weight">Berat Badan (Kg)</string>
+    <string name="txt_height">Tinggi Badan (cm)</string>
+    <string name="txt_diagnoses_result">Hasil Diagnosa</string>
+    <string name="txt_description">Deskripsi</string>
+    <string name="txt_diagnoses_result_with_colon">Hasil Diagnosa:&#160;</string>
+    <string name="txt_diagnoses_date_with_colon">Tanggal:&#160;</string>
+    <string name="txt_diagnoses_date">Tanggal Diagnosa</string>
 </resources>
